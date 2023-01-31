@@ -1,0 +1,153 @@
+﻿<Window x:Class="View.AddUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="AddUser"
+        Height="450"
+        Width="300"
+        Loaded="Window_Loaded"
+        Background="Black">
+    <Grid Margin="0,0,0,-6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="Enter First Name"
+               HorizontalAlignment="Center"
+               FontSize="17">
+            <Label.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF35252"
+                                  Offset="0" />
+                    <GradientStop Color="#FFFAFB93"
+                                  Offset="1" />
+                </RadialGradientBrush>
+            </Label.Background>
+        </Label>
+        <TextBox Name="fname"
+                 FontSize="17"
+                 Grid.Row="1" />
+        <Label Content="Enter Last Name"
+               HorizontalAlignment="Center"
+               FontSize="17"
+               Grid.Row="2">
+            <Label.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF35252"
+                                  Offset="0" />
+                    <GradientStop Color="#FFFAFB93"
+                                  Offset="1" />
+                </RadialGradientBrush>
+            </Label.Background>
+        </Label>
+        <TextBox Name="lname"
+                 FontSize="17"
+                 Grid.Row="3" />
+        <Label Content="Enter Photo Url"
+               HorizontalAlignment="Center"
+               FontSize="17"
+               Grid.Row="4">
+            <Label.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF35252"
+                                  Offset="0" />
+                    <GradientStop Color="#FFFAFB93"
+                                  Offset="1" />
+                </RadialGradientBrush>
+            </Label.Background>
+        </Label>
+
+        <TextBox Name="PUrl"
+                 FontSize="20"
+                 Grid.Row="5" />
+
+        <Label Content="Enter User Name"
+               HorizontalAlignment="Center"
+               FontSize="17"
+               Grid.Row="6">
+            <Label.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF35252"
+                                  Offset="0" />
+                    <GradientStop Color="#FFFAFB93"
+                                  Offset="1" />
+                </RadialGradientBrush>
+            </Label.Background>
+        </Label>
+        <TextBox Name="uname"
+                 FontSize="20"
+                 Grid.Row="7" />
+        <Label Content="Enter Email"
+               HorizontalAlignment="Center"
+               FontSize="17"
+               Grid.Row="8">
+            <Label.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF35252"
+                                  Offset="0" />
+                    <GradientStop Color="#FFFAFB93"
+                                  Offset="1" />
+                </RadialGradientBrush>
+            </Label.Background>
+        </Label>
+        <TextBox Name="uemail"
+                 FontSize="20"
+                 Grid.Row="9" />
+
+        <Button Grid.Row="11"
+                FontSize="17"
+                Click="Button_Click">Add User</Button>
+        <Label Content="Address"
+               FontSize="15"
+               HorizontalAlignment="Left"
+               Grid.Row="10"
+               VerticalAlignment="Center"
+               RenderTransformOrigin="-0.007,0.6"
+               Margin="94,0,0,0">
+            <Label.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF35252"
+                                  Offset="0" />
+                    <GradientStop Color="#FFFAFB93"
+                                  Offset="1" />
+                </RadialGradientBrush>
+            </Label.Background>
+        </Label>
+        <ComboBox x:Name="CbAddress"
+                  HorizontalAlignment="Left"
+                  Margin="162,10,0,0"
+                  Grid.Row="10"
+                  VerticalAlignment="Top"
+                  Width="50"
+                  Height="20"
+                  RenderTransformOrigin="-1.578,0.5">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Number}" />
+                        <TextBlock Text="{Binding Street}" />
+                        <TextBlock Text="{Binding City}" />
+                        <TextBlock Text="{Binding Province}" />
+                        <TextBlock Text="{Binding PostalCode}" />
+                        <TextBlock Text="{Binding Country.Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+    </Grid>
+</Window>
