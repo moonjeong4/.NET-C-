@@ -1,0 +1,102 @@
+﻿<Window x:Class="D16FinalExam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:D16FinalExam"
+        mc:Ignorable="d"
+        Title="Artist Browser" Height="600" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0"
+                   Grid.RowSpan="2"
+                   Grid.Column="0"
+                   Text="Artist Browser"
+                   FontSize="33"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Atists"
+                   FontSize="25" />
+        <ListView Name="lvArtists"
+                  Grid.Row="2"
+                  Grid.Column="0"
+                  SelectionChanged="lvArtists_SelectionChanged">
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                    <TextBlock 
+                               FontSize="18"
+                               Text="{Binding Name}" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontSize="15"
+                                   Text="{Binding TotalAlbums}"/>
+                            <TextBlock FontSize="15"
+                                       Margin="5,0"
+                                       Text="Album(s)" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   Text="Albums"
+                   FontSize="25"/>
+        <Grid Grid.Column="1"
+              Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+        <ListView Name="lvAlbums"
+                      SelectionChanged="lvAlbums_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock FontSize="18"
+                                       Text="{Binding Title}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+            
+            <Button Grid.Row="1"
+                    x:Name="na"
+                    Click="na_Click">
+                Add Album
+            </Button>
+        </Grid>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   Text="Tracks" 
+                   FontSize="25"/>
+        <ListView Name="lvTracks"
+                  Grid.Column="2"
+                  Grid.Row="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock FontSize="18"
+                                   Text="{Binding Name}" />
+                        
+                        <TextBlock FontSize="15"
+                                   Text="{Binding Genre.Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </Grid>
+</Window>
