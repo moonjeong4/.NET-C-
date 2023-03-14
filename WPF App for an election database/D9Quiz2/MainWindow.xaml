@@ -1,0 +1,46 @@
+﻿<Window x:Class="D9Quiz2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:D9Quiz2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="300"
+        Loaded="Window_Loaded">
+    <Grid>
+        <ListView x:Name="lvcand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        
+                        <StackPanel Orientation="Vertical">
+                            <Label Foreground="LightBlue"
+                                   FontSize="22">
+                                Candidate Info                               
+                            </Label>
+
+                            <TextBlock Text="Name:" 
+                                       Foreground="Red"/>
+                            <TextBlock Text="{Binding Name}"
+                                       Foreground="Blue" />
+                            <TextBlock Text="Website:"
+                                       Foreground="Red" />
+                            <TextBlock Text="{Binding Website}"
+                                       Foreground="Blue" />
+                            <TextBlock Text="Party:"
+                                       Foreground="Red" />
+                            <TextBlock Text="{Binding Party.PartyName}"
+                                       Foreground="Blue" />
+                            <TextBlock Text="Riding:"
+                                       Foreground="Red" />
+                            <TextBlock Text="{Binding Riding.RidingName}"
+                                       Foreground="Blue" />
+
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Window>
